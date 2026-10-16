@@ -1,7 +1,6 @@
-
-/ Cambia esta fecha por el cumpleaños de tu pareja
+// Cambia esta fecha por el cumpleaños de tu pareja
 // Formato: AÑO, MES-1, DÍA, HORA, MINUTO, SEGUNDO
-const birthday = new Date(2026, 10, 16, 0, 0, 0);
+const birthday = new Date(2026, 9, 18, 0, 0, 0);
 
 function updateCountdown() {
   const now = new Date();
@@ -26,7 +25,7 @@ function updateCountdown() {
   const seconds = Math.floor((diff / 1000) % 60);
 
   document.getElementById("timer").textContent =
-    `${days} días ${hours} horas ${minutes} min ${seconds} seg`;
+    ${days} días ${hours} horas ${minutes} min ${seconds} seg;
 }
 
 setInterval(updateCountdown, 1000);
@@ -53,9 +52,9 @@ for (let i = 0; i < 180; i++) {
   const px = 140 + x * 9 * (0.55 + r * 0.45);
   const py = 140 - y * 9 * (0.55 + r * 0.45);
 
-  heart.style.left = `${px}px`;
-  heart.style.top = `${py}px`;
-  heart.style.animationDelay = `${Math.random() * 3}s`;
+  heart.style.left = ${px}px;
+  heart.style.top = ${py}px;
+  heart.style.animationDelay = ${Math.random() * 3}s;
 
   const colors = ["#ff4d6d", "#ff6b81", "#ff1744", "#ff8fa3", "#e63973"];
   heart.style.background = colors[Math.floor(Math.random() * colors.length)];
@@ -76,6 +75,4 @@ setInterval(() => {
   bg.appendChild(h);
 
   setTimeout(() => h.remove(), 12000);
-}, 250);
-
 }, 250);
