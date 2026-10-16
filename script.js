@@ -1,7 +1,7 @@
 
-// Cambia esta fecha por el cumpleaños de tu pareja
+/ Cambia esta fecha por el cumpleaños de tu pareja
 // Formato: AÑO, MES-1, DÍA, HORA, MINUTO, SEGUNDO
-const birthday = new Date(2026, 9, 18, 0, 0, 0);
+const birthday = new Date(2026, 10, 16, 0, 0, 0);
 
 function updateCountdown() {
   const now = new Date();
@@ -76,4 +76,6 @@ setInterval(() => {
   bg.appendChild(h);
 
   setTimeout(() => h.remove(), 12000);
+}, 250);
+
 }, 250);
