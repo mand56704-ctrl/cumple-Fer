@@ -1,0 +1,859 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+
+  font-family:
+    "Segoe UI",
+    sans-serif;
+
+  min-height:100vh;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffdde1,
+      #ee9ca7
+    );
+
+  color:#444;
+
+  overflow-x:hidden;
+
+}
+
+
+/* ======================
+   FONDO
+====================== */
+
+.background-hearts{
+
+  position:fixed;
+
+  inset:0;
+
+  overflow:hidden;
+
+  pointer-events:none;
+
+  z-index:0;
+
+}
+
+.bg-heart{
+
+  position:absolute;
+
+  bottom:-50px;
+
+  color:#ff4d6d;
+
+  opacity:.5;
+
+  animation:
+    heartRise linear forwards;
+
+}
+
+@keyframes heartRise{
+
+  from{
+
+    transform:
+      translateY(0)
+      rotate(0deg);
+
+    opacity:0;
+
+  }
+
+  15%{
+
+    opacity:.5;
+
+  }
+
+  to{
+
+    transform:
+      translateY(-115vh)
+      rotate(35deg);
+
+    opacity:0;
+
+  }
+
+}
+
+
+/* ======================
+   PREGUNTAS
+====================== */
+
+.quiz-container{
+
+  min-height:100vh;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:30px;
+
+  position:relative;
+
+  z-index:2;
+
+}
+
+.quiz-card{
+
+  width:100%;
+
+  max-width:650px;
+
+  background:
+    rgba(
+      255,
+      250,
+      247,
+      .96
+    );
+
+  border-radius:30px;
+
+  padding:45px;
+
+  box-shadow:
+    0 25px 60px
+    rgba(0,0,0,.18);
+
+  text-align:center;
+
+  animation:
+    cardAppear
+    1s
+    ease;
+
+}
+
+@keyframes cardAppear{
+
+  from{
+
+    opacity:0;
+
+    transform:
+      translateY(30px)
+      scale(.95);
+
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:
+      translateY(0)
+      scale(1);
+
+  }
+
+}
+
+.small-heart{
+
+  font-size:3rem;
+
+  margin-bottom:10px;
+
+  animation:
+    heartbeat
+    1.4s
+    infinite;
+
+}
+
+@keyframes heartbeat{
+
+  0%,
+  100%{
+
+    transform:
+      scale(1);
+
+  }
+
+  50%{
+
+    transform:
+      scale(1.15);
+
+  }
+
+}
+
+.quiz-card h1{
+
+  color:#d7265b;
+
+  font-size:2.3rem;
+
+  margin-bottom:20px;
+
+}
+
+.intro{
+
+  font-size:1.1rem;
+
+  line-height:1.7;
+
+  margin-bottom:30px;
+
+}
+
+
+/* preguntas */
+
+.question{
+
+  text-align:left;
+
+  margin-bottom:22px;
+
+}
+
+.question label{
+
+  display:block;
+
+  color:#b3123f;
+
+  font-weight:600;
+
+  margin-bottom:9px;
+
+  line-height:1.5;
+
+}
+
+.question input{
+
+  width:100%;
+
+  padding:15px 17px;
+
+  border-radius:14px;
+
+  border:
+    2px solid
+    #f2cbd5;
+
+  outline:none;
+
+  font-size:1rem;
+
+  transition:.3s;
+
+  background:#fff;
+
+}
+
+.question input:focus{
+
+  border-color:#d7265b;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(215,38,91,.08);
+
+}
+
+
+/* botón */
+
+.verify-button{
+
+  width:100%;
+
+  padding:15px;
+
+  border:0;
+
+  border-radius:15px;
+
+  cursor:pointer;
+
+  background:
+    linear-gradient(
+      135deg,
+      #d7265b,
+      #ff5470
+    );
+
+  color:white;
+
+  font-size:1.05rem;
+
+  font-weight:700;
+
+  margin-top:10px;
+
+  box-shadow:
+    0 8px 20px
+    rgba(215,38,91,.25);
+
+  transition:.3s;
+
+}
+
+.verify-button:hover{
+
+  transform:
+    translateY(-2px)
+    scale(1.01);
+
+}
+
+.result-message{
+
+  min-height:25px;
+
+  margin-top:18px;
+
+  font-weight:600;
+
+}
+
+
+/* ======================
+   SOBRE
+====================== */
+
+.letter-section{
+
+  min-height:100vh;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  align-items:center;
+
+  text-align:center;
+
+  position:relative;
+
+  z-index:5;
+
+  padding:
+    40px 20px;
+
+}
+
+.letter-title{
+
+  font-size:2.5rem;
+
+  color:#b3123f;
+
+  margin-bottom:10px;
+
+}
+
+.letter-subtitle{
+
+  font-size:1.15rem;
+
+  margin-bottom:60px;
+
+}
+
+.envelope-container{
+
+  perspective:1000px;
+
+}
+
+.envelope{
+
+  width:380px;
+
+  height:250px;
+
+  position:relative;
+
+  cursor:pointer;
+
+}
+
+.envelope-back{
+
+  position:absolute;
+
+  width:100%;
+
+  height:100%;
+
+  background:#f3b8bd;
+
+  border-radius:
+    0 0 12px 12px;
+
+  z-index:1;
+
+}
+
+
+/* papel interior */
+
+.letter-paper{
+
+  position:absolute;
+
+  width:90%;
+
+  height:90%;
+
+  left:5%;
+
+  bottom:5%;
+
+  background:#fffaf5;
+
+  z-index:2;
+
+  border-radius:8px;
+
+  box-shadow:
+    0 5px 15px
+    rgba(0,0,0,.12);
+
+  transition:
+    transform
+    1.3s
+    ease;
+
+  overflow:hidden;
+
+}
+
+.letter-content{
+
+  padding:25px;
+
+  color:#9d2449;
+
+}
+
+
+/* lados del sobre */
+
+.envelope-left{
+
+  position:absolute;
+
+  z-index:4;
+
+  width:0;
+
+  height:0;
+
+  border-top:
+    125px solid transparent;
+
+  border-bottom:
+    125px solid transparent;
+
+  border-left:
+    190px solid #efa7ae;
+
+}
+
+.envelope-right{
+
+  position:absolute;
+
+  right:0;
+
+  z-index:4;
+
+  width:0;
+
+  height:0;
+
+  border-top:
+    125px solid transparent;
+
+  border-bottom:
+    125px solid transparent;
+
+  border-right:
+    190px solid #efa7ae;
+
+}
+
+.envelope-bottom{
+
+  position:absolute;
+
+  bottom:0;
+
+  z-index:5;
+
+  width:0;
+
+  height:0;
+
+  border-left:
+    190px solid transparent;
+
+  border-right:
+    190px solid transparent;
+
+  border-bottom:
+    145px solid #f7c5c8;
+
+}
+
+
+/* solapa */
+
+.envelope-flap{
+
+  position:absolute;
+
+  top:0;
+
+  width:0;
+
+  height:0;
+
+  border-left:
+    190px solid transparent;
+
+  border-right:
+    190px solid transparent;
+
+  border-top:
+    145px solid #e9949e;
+
+  transform-origin:top;
+
+  z-index:7;
+
+  transition:
+    transform 1s ease,
+    z-index .3s;
+
+}
+
+
+/* sello */
+
+.seal{
+
+  position:absolute;
+
+  width:52px;
+
+  height:52px;
+
+  border-radius:50%;
+
+  background:#d7265b;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  color:white;
+
+  left:50%;
+
+  top:105px;
+
+  transform:
+    translateX(-50%);
+
+  z-index:8;
+
+  box-shadow:
+    0 5px 10px
+    rgba(0,0,0,.18);
+
+  transition:.4s;
+
+}
+
+
+/* abierto */
+
+.envelope.open
+.envelope-flap{
+
+  transform:
+    rotateX(180deg);
+
+  z-index:0;
+
+}
+
+.envelope.open
+.seal{
+
+  opacity:0;
+
+  transform:
+    translateX(-50%)
+    scale(0);
+
+}
+
+.envelope.open
+.letter-paper{
+
+  transform:
+    translateY(-150px);
+
+}
+
+
+.open-message{
+
+  margin-top:50px;
+
+  color:#b3123f;
+
+  font-weight:600;
+
+  animation:
+    pulseText
+    1.4s
+    infinite;
+
+}
+
+@keyframes pulseText{
+
+  50%{
+
+    opacity:.5;
+
+  }
+
+}
+
+
+/* ======================
+   CARTA FINAL
+====================== */
+
+.full-letter{
+
+  min-height:100vh;
+
+  padding:
+    70px 20px;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  position:relative;
+
+  z-index:8;
+
+}
+
+.paper{
+
+  position:relative;
+
+  width:100%;
+
+  max-width:750px;
+
+  background:#fffaf4;
+
+  padding:
+    60px 65px;
+
+  border-radius:12px;
+
+  box-shadow:
+    0 25px 70px
+    rgba(0,0,0,.2);
+
+  animation:
+    letterAppear
+    1.2s
+    ease;
+
+}
+
+@keyframes letterAppear{
+
+  from{
+
+    opacity:0;
+
+    transform:
+      translateY(50px);
+
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:
+      translateY(0);
+
+  }
+
+}
+
+.paper-heart{
+
+  text-align:center;
+
+  font-size:3rem;
+
+  margin-bottom:15px;
+
+}
+
+.paper h1{
+
+  text-align:center;
+
+  color:#b3123f;
+
+  margin-bottom:10px;
+
+}
+
+.letter-date{
+
+  text-align:center;
+
+  color:#888;
+
+  margin-bottom:40px;
+
+  font-style:italic;
+
+}
+
+.letter-text{
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-size:1.12rem;
+
+  line-height:1.9;
+
+}
+
+.letter-text p{
+
+  margin-bottom:22px;
+
+}
+
+.letter-signature{
+
+  margin-top:45px;
+
+  text-align:right;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-size:1.2rem;
+
+  color:#b3123f;
+
+  font-style:italic;
+
+}
+
+
+/* ======================
+   UTILIDAD
+====================== */
+
+.hidden{
+
+  display:none !important;
+
+}
+
+
+/* ======================
+   CELULAR
+====================== */
+
+@media(max-width:600px){
+
+  .quiz-card{
+
+    padding:
+      35px 22px;
+
+  }
+
+  .quiz-card h1{
+
+    font-size:1.8rem;
+
+  }
+
+  .letter-title{
+
+    font-size:1.9rem;
+
+  }
+
+  .envelope{
+
+    transform:
+      scale(.78);
+
+  }
+
+  .paper{
+
+    padding:
+      40px 25px;
+
+  }
+
+  .letter-text{
+
+    font-size:1rem;
+
+  }
+
+}
