@@ -9,15 +9,15 @@ CON LOS REALES.
 
 
 const anniversary =
-  "18/10/2026";
+  "30/04/2026";
 
 
 const firstDateKisses =
-  "0";
+  "3";
 
 
 const confessionDate =
-  "DD/MM/AAAA";
+  "18/04/2026";
 
 
 
