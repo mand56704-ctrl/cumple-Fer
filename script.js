@@ -6,7 +6,7 @@
 // new Date(AÑO, MES-1, DÍA, HORA, MINUTO, SEGUNDO)
 //
 // Octubre = 9
-const birthday = new Date(2026, 9, 18, 0, 0, 0);
+const birthday = new Date(2026, 9, 25, 0, 0, 0);
 
 let birthdayOpened = false;
 
